@@ -1,5 +1,19 @@
 #!/bin/bash
 
-echo " can you see me"
+echo "IP address: "
+read ip
+
+if [ ! -z $ip ]
+then
+  ping -c 1 $ip
+  if [ $? -eq 0 ] ; then
+    echo "Ping is responding"
+  else
+    echo "not ping"
+  fi
+else
+  echo "IP address is empty"
+fi
+
 
 
